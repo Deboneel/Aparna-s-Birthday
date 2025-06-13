@@ -187,3 +187,69 @@ footer{padding:20px;text-align:center;font-size:0.9rem;}
     padding: 3px;
   }
 }
+
+
+.birthday-footer {
+  width: 100%;
+  background: linear-gradient(to top, #f3e8ff, #e6e6fa);
+  color: #5e2b8c;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', 'Comic Sans MS', cursive;
+  border-top: 2px dashed #d8b3ff;
+  box-shadow: 0 -5px 20px rgba(128, 90, 213, 0.2);
+  box-sizing: border-box;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.gif-row {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gif-row img {
+  width: 320px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(95, 64, 128, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+.gif-row img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px 6px rgba(180, 120, 255, 0.6);
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(180, 120, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(180, 120, 255, 0.8);
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 600px) {
+  .footer-content p {
+    font-size: 16px;
+  }
+
+  .gif-row img {
+    width: 100px;
+  }
+}

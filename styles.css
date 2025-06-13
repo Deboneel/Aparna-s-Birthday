@@ -220,8 +220,8 @@ footer{padding:20px;text-align:center;font-size:0.9rem;}
 }
 
 .gif-row img {
-  width: 320px;
-  max-width: 100%;
+  width: 300px;
+  max-width: auto;
   height: auto;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(95, 64, 128, 0.3);

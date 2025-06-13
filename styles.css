@@ -156,3 +156,34 @@ h2{font-size:2.5rem;margin-bottom:20px;text-align:center;color:#6c4aad;}
 /* Footer */
 footer{padding:20px;text-align:center;font-size:0.9rem;}
 
+@media (max-width: 768px) {
+  #diary {
+    height: 420px; /* Allow fixed height but enable scroll in page */
+  }
+
+  .page {
+    padding: 15px 10px;
+    font-size: 1rem;
+    overflow-y: auto;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+
+  .note-heading {
+    font-size: 17px;
+  }
+
+  .note-body {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .note-footer {
+    font-size: 9px;
+    margin-top: 40px;
+  }
+
+  .page.page-calendar table td {
+    padding: 3px;
+  }
+}

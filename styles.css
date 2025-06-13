@@ -1,0 +1,158 @@
+/* Reset & Body */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#f5e6ff;color:#5d3a82;overflow-x:hidden;}
+
+section{padding:40px 7vw;}
+h2{font-size:2.5rem;margin-bottom:20px;text-align:center;color:#6c4aad;}
+
+/* Section 1 */
+#top-section{display:flex;justify-content:space-between;padding-top:80px;background:linear-gradient(135deg,#ffe0f5,#d8c4f5);position:relative;border-bottom:80px solid transparent;border-radius:0 0 80px 80px;}
+.greeting {flex:1;font-size:clamp(1.5rem,4vw,4.5rem);}
+.greeting h1{line-height:1.2;color:#7b59d4;text-shadow:3px 3px 15px rgba(123,89,212,0.7);}
+.greeting p{font-size:1.2rem;color:#583b8a;margin-top:10px;}
+
+#photo-chain{flex:0.4;display:flex;flex-direction:column;align-items:center;}
+.chain-link{width:6px;height:25px;background:#b3a2ca;animation:paintFade 4s infinite;}
+.photo{width:110px;height:110px;border:4px solid #9a7ec8;border-radius:25px;overflow:hidden;animation:swing 4s ease-in-out infinite;animation-delay:var(--delay);}
+.photo img{width:100%;height:100%;object-fit:cover;}
+.photo:hover{animation-play-state:paused;transform:scale(1.1);}
+@keyframes swing{0%,100%{transform:rotate(0);}50%{transform:rotate(6deg);}}
+@keyframes paintFade{0%,100%{opacity:0.15;}50%{opacity:0.4;}}
+
+/* Love bubbles */
+#love-bubbles-container{position:absolute;bottom:20px;left:20px;width:150px;height:150px;pointer-events:none;}
+.love-bubble{position:absolute;width:20px;height:20px;background:#ff80bf;border-radius:50%;opacity:0;animation:rise 5s ease-out forwards;}
+@keyframes rise{0%{transform:translateY(0);opacity:1;}100%{transform:translateY(-150px) scale(0);opacity:0;}}
+
+/* Section 2 */
+#iphone-section{background:linear-gradient(135deg,#b494e1,#7b59d4);border-radius:40px;display:flex;justify-content:center;align-items:center;margin-top:40px;}
+.iphone-frame{position:relative;width:320px;height:640px;background:#111;border:14px solid #6b4dc7;border-radius:60px;overflow:hidden;}
+.reel-video{width:100%;height:calc(100% - 60px);border-radius:30px;}
+.play-pause-btn{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:#a284e8;color:#fff;padding:10px 24px;border:none;border-radius:28px;cursor:pointer;}
+
+/* Section 3 */
+#envelope-section{background:#f0e5ff;border-radius:40px 40px 0 0;margin-top:40px;}
+.carousel{display:flex;justify-content:center;align-items:center;gap:10px;}
+.envelope-container{display:flex;overflow-x:auto;gap:20px;padding:10px;scroll-behavior:smooth;}
+.envelope{flex:0 0 auto;width:240px;height:160px;background:#d1c4e9;border-radius:20px;position:relative;cursor:pointer;box-shadow:0 8px 20px rgba(99,73,164,0.5);}
+.envelope .flap{position:absolute;top:0;width:100%;height:50%;background:linear-gradient(135deg,#9679d8,#b19ee2);clip-path:polygon(50% 0,0% 100%,100% 100%);}
+.envelope .letter{display:none;position:absolute;top:55px;left:10px;width:220px;height:350px;background:#fff8dc;border:2px dashed #aaa;border-radius:12px;padding:10px;font-family:'Dancing Script',cursive;overflow:auto;}
+.envelope.open .letter{display:block;}
+.letter video{width:100%;border-radius:8px;margin-top:8px;}
+.envelope {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.envelope:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(99, 73, 164, 0.6);
+}
+
+.envelope.open {
+  height: 320px; /* Increase height when opened */
+}
+
+.envelope.open .letter {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* Section 4 */
+#diary-section{background:linear-gradient(135deg,#d8c4f5,#f0e7ff);border-radius:0 0 60px 60px;margin-top:40px;text-align:center;}
+#diary {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  height: 400px;
+  margin: auto;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fffef9;
+  padding: 30px;
+  font-family: 'Zeyada', cursive;
+  font-size: 1.8rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  backface-visibility: hidden;
+  transform-origin: left;
+  transition: transform 0.7s ease;
+}
+
+.page-cover{background:linear-gradient(45deg,#b594e1,#6b4dc7);color:#f7f0ff;font-weight:700;font-size:2rem;display:flex;align-items:center;justify-content:center;z-index:4;cursor:pointer;}
+.page.page-cover {
+  background: linear-gradient(145deg, #7b3f00, #9e5c16);
+  color: #fffbe6;
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #4b2e00;
+  box-shadow:
+    inset 0 0 30px rgba(255, 255, 255, 0.1),
+    0 12px 25px rgba(0, 0, 0, 0.5),
+    0 0 0 10px #3e2600;
+  font-family: 'Zeyada', cursive;
+  letter-spacing: 1.2px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #7b3f00,
+    #7b3f00 10px,
+    #8d4a05 10px,
+    #8d4a05 20px
+  );
+}
+
+
+.page.page-calendar #calendar-holder{margin-top:20px;}
+.page.page-calendar table{width:100%;border-collapse:collapse;text-align:center;margin-top:10px;}
+.page.page-calendar td{border:1px solid #ccc;padding:6px;}
+.page.page-calendar td.marked{background:#ffcccc;border-radius:50%;color:#a81818;}
+
+.page.page-back{background:#d4bbf9;color:#5c3a99;font-weight:600;z-index:1;}
+#flip-prev,#flip-next{margin:10px;padding:10px 20px;background:#9a7ec8;border:none;color:#fff;border-radius:28px;cursor:pointer;}
+
+.page.page-note{background:#fff8dc;color:#840808;  font-family: 'Siyam Rupali', serif;;font-style:normal;z-index:2;  box-shadow:
+    5px 5px 10px rgba(0,0,0,0.15), /* subtle shadow */
+    inset 0 0 15px #f9eab3; /* inner light for paper texture */
+      background: url('https://wallpapers.com/images/hd/vintage-paper-background-d1zmfj3zp0nq6bva.jpg') no-repeat center center;}
+.note-heading {
+  font-size: 24px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+  color: #4b2e2e; /* or keep #840808 if preferred */
+}
+
+.note-body {
+  font-size: 14px; /* smaller text */
+  line-height: 1.8;
+  color: #1e3a5f; /* softer pen-like color */
+}
+
+.note-footer {
+  font-size: 10px;
+  font-style: italic;
+  margin-top: 70px;
+  padding-top: 10px;
+  border-top: 1px solid #0a0000; /* horizontal line above */
+  color: #7A5D8C; /* or keep #840808 if preferred */
+  
+}
+
+
+/* Footer */
+footer{padding:20px;text-align:center;font-size:0.9rem;}
+
